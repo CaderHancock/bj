@@ -1,7 +1,10 @@
 CardUtils.class
+Table.class
 CardUtils$1.class
 Hand.class
 Player.class
 BasicStrategy.class
+Player$PlayerActions.class
 Card.class
 Shoe.class
+Dealer.class

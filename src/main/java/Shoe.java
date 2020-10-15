@@ -10,10 +10,15 @@ class Shoe{
 	public Shoe(Integer decks){
 
 		ArrayList<Card> deckInit = new ArrayList<>();
+		addDecks(decks, deckInit);
+		Collections.shuffle(deckInit);
+		insertCutCard(deckInit);
+		cards = deckInit.iterator();
+	}
 
-		for (int i = 0; i < decks*4; i++){
+	private void addDecks(Integer decks, ArrayList<Card> deckInit) {
+		for (int i = 0; i < decks *4; i++){
 			deckInit.addAll(List.of(
-				Card.ONE,
 				Card.TWO,
 				Card.THREE,
 				Card.FOUR,
@@ -28,10 +33,6 @@ class Shoe{
 				Card.KING,
 				Card.ACE));
 		}
-
-		Collections.shuffle(deckInit);
-		insertCutCard(deckInit);
-		cards = deckInit.iterator();
 	}
 
 	private void insertCutCard(ArrayList<Card> deckInit) {
@@ -41,5 +42,11 @@ class Shoe{
 		int index = (int) ((Math.random() * (higherbound - lowerBound)) + lowerBound);
 
 		deckInit.add(index, Card.CUTCARD);
+	}
+	public Card next(){
+		if(cards.next().equals(Card.CUTCARD)){
+			throw new RuntimeException("CUTCARD");
+
+		}else return cards.next();
 	}
 }

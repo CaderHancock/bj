@@ -3,9 +3,9 @@ public class CardUtils{
 
 	public static int sumHand(Hand hand){
 
-		if(handHasAce(hand)) {
+		/*if(handHasAce(hand)) {
 			return 0;
-		}
+		}*/
 		return hand.getCards().stream().mapToInt(card -> gameValue(card)).sum();
 
 	}
@@ -16,8 +16,8 @@ public class CardUtils{
 
 	private static Integer gameValue(Card card) {
 		 return switch (card){
-			case ONE -> 1;
 			case TWO -> 2;
+			 case ACE -> 11;
 			 case THREE -> 3;
 			 case FOUR -> 4;
 			 case FIVE -> 5;
@@ -26,7 +26,7 @@ public class CardUtils{
 			 case EIGHT -> 8;
 			 case NINE -> 9;
 			 case TEN, JACK, QUEEN, KING -> 10;
-			 case ACE -> null;
+
 			 case CUTCARD -> {
 				 yield null;
 			 }
