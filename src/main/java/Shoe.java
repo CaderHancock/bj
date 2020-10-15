@@ -10,10 +10,19 @@ class Shoe{
 	public Shoe(Integer decks){
 
 		ArrayList<Card> deckInit = new ArrayList<>();
+		while (!deckInit.contains(Card.CUTCARD))
+			deckInit = initShoe(decks);
+
+		cards = deckInit.iterator();
+	}
+
+
+	private ArrayList<Card> initShoe(Integer decks) {
+		ArrayList<Card> deckInit = new ArrayList<>();
 		addDecks(decks, deckInit);
 		Collections.shuffle(deckInit);
 		insertCutCard(deckInit);
-		cards = deckInit.iterator();
+		return deckInit;
 	}
 
 	private void addDecks(Integer decks, ArrayList<Card> deckInit) {
@@ -39,9 +48,10 @@ class Shoe{
 		int length = deckInit.size();
 		int higherbound = length - length/5;
 		int lowerBound = higherbound -	length/10;
-		int index = (int) ((Math.random() * (higherbound - lowerBound)) + lowerBound);
 
+		int index = (int) ((Math.random() * (higherbound - lowerBound)) + lowerBound);
 		deckInit.add(index, Card.CUTCARD);
+
 	}
 	public Card next(){
 		if(cards.next().equals(Card.CUTCARD)){

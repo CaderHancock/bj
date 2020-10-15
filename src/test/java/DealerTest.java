@@ -1,4 +1,4 @@
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ public class DealerTest {
 	@BeforeEach
 	void setup(){
 		player = new Player(1000);
-		shoe = new Shoe(8);
+		shoe = new Shoe(6);
 		dealer = new Dealer(List.of(player),shoe);
 	}
 	@Test
@@ -40,19 +40,19 @@ public class DealerTest {
 				System.out.println("FUCK" +
 						playerHand.getCards() + "sum:"+ CardUtils.sumHand(playerHand) +
 						dealerHand.getCards() +"sum:" + CardUtils.sumHand(dealerHand));
+				fail();
 					}
 		}
 	}
 	@Test
 	public void cutCardAlwaysThere(){
 
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 100000; i++) {
             System.out.println(i);
-			assertThrows(RuntimeException.class, () -> {
-				for (int j = 0; j < 1000; j++) {
-					dealer.playRound();
-				}
-			});
+
+            System.out.println(List.of(shoe.getCards()).indexOf(Card.CUTCARD));
+			shoe = new Shoe(6);
+
 		}
 	}
 

@@ -5,15 +5,6 @@ public class Dealer{
     private List<Player> players;
     private Shoe shoe;
     private boolean cutCardSeen;
-
-    public Hand getDealerHand() {
-        return dealerHand;
-    }
-
-    public void setDealerHand(Hand dealerHand) {
-        this.dealerHand = dealerHand;
-    }
-
     private Hand dealerHand;
 
     public Dealer(List<Player> players, Shoe shoe) {
@@ -59,4 +50,13 @@ public class Dealer{
     public void playPlayer(Player player){
 
     }
+
+    public Hand getDealerHand() {
+        return dealerHand;
+    }
+
+    public void setDealerHand(Hand dealerHand) {
+        this.dealerHand = dealerHand;
+    }
+
 }
