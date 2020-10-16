@@ -3,6 +3,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 public class DealerTest {
 	Player player;
@@ -34,7 +35,6 @@ public class DealerTest {
 			dealer.playRound();
 			Hand playerHand = player.getHand().get(0);
 			Hand dealerHand = dealer.getDealerHand();
-			System.out.println(i);
 			if (CardUtils.sumHand(playerHand) == 0 ||
 					CardUtils.sumHand(dealerHand) == 0){
 				System.out.println("FUCK" +
@@ -47,12 +47,12 @@ public class DealerTest {
 	@Test
 	public void cutCardAlwaysThere(){
 
-		for (int i = 0; i < 100000; i++) {
-            System.out.println(i);
-
-            System.out.println(List.of(shoe.getCards()).indexOf(Card.CUTCARD));
+		for (int i = 0; i < 1000; i++) {
+			assertTrue(Stream.generate(()->null)
+				.takeWhile(x -> shoe.getCardIterator().hasNext())
+				.map(n -> shoe.getCardIterator().next())
+				.anyMatch(x -> x.equals(Card.CUTCARD)));
 			shoe = new Shoe(6);
-
 		}
 	}
 

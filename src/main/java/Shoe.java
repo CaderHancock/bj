@@ -2,7 +2,8 @@ import java.util.*;
 
 class Shoe{
 
-	public Iterator<Card> getCards() {
+	private int runningCount = 0;
+	public Iterator<Card> getCardIterator() {
 		return cards;
 	}
 
@@ -17,6 +18,7 @@ class Shoe{
 	}
 
 
+	@org.jetbrains.annotations.NotNull
 	private ArrayList<Card> initShoe(Integer decks) {
 		ArrayList<Card> deckInit = new ArrayList<>();
 		addDecks(decks, deckInit);
@@ -46,10 +48,10 @@ class Shoe{
 
 	private void insertCutCard(ArrayList<Card> deckInit) {
 		int length = deckInit.size();
-		int higherbound = length - length/5;
-		int lowerBound = higherbound -	length/10;
+		int higherBound = length - length/5;
+		int lowerBound = higherBound -	length/10;
 
-		int index = (int) ((Math.random() * (higherbound - lowerBound)) + lowerBound);
+		int index = (int) ((Math.random() * (higherBound - lowerBound)) + lowerBound);
 		deckInit.add(index, Card.CUTCARD);
 
 	}
@@ -59,4 +61,12 @@ class Shoe{
 
 		}else return cards.next();
 	}
+	public int hiloValue(Card card){
+		return switch (card){
+			case TWO, THREE, FOUR, FIVE, SIX -> 1;
+			case SEVEN, EIGHT, NINE, CUTCARD -> 0;
+			case TEN, JACK, QUEEN, KING, ACE -> -1;
+		};
+	}
 }
+ 

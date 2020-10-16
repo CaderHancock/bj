@@ -20,6 +20,11 @@ public class Dealer{
     }
 
     private void dealHands() {
+
+        for (int i = 0; i < players.size() ; i++) {
+
+        }
+
         players.forEach(player ->
             player.setHand(List.of(new Hand(player.bet))));
         dealerHand = new Hand(0);

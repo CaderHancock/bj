@@ -17,8 +17,11 @@ class Player{
 		this.bankroll = bankroll;
 
 	}
-	private List<PlayerActions> avaliableActions(){
-		return null;
+	private List<PlayerActions> availableActions(){
+/*
+	   if (hand.)
+*/
+        return null;
 	}
 	public List<Hand> getHand() {
 		return hand;
