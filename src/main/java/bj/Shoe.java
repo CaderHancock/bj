@@ -1,3 +1,5 @@
+package bj;
+
 import java.util.*;
 
 class Shoe{
@@ -61,12 +63,5 @@ class Shoe{
 
 		}else return cards.next();
 	}
-	public int hiloValue(Card card){
-		return switch (card){
-			case TWO, THREE, FOUR, FIVE, SIX -> 1;
-			case SEVEN, EIGHT, NINE, CUTCARD -> 0;
-			case TEN, JACK, QUEEN, KING, ACE -> -1;
-		};
-	}
+
 }
- 

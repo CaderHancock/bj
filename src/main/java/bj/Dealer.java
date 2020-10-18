@@ -1,7 +1,14 @@
+package bj;
+
+import bj.ap.CountStrategy;
+import bj.ap.Counter;
+
 import java.util.List;
 
 public class Dealer{
 
+    private CountStrategy countStrategy;
+    private Counter counter;
     private List<Player> players;
     private Shoe shoe;
     private boolean cutCardSeen;
@@ -11,6 +18,12 @@ public class Dealer{
 
         this.players = players;
         this.shoe = shoe;
+    }
+    public Dealer(List<Player> players, Shoe shoe, CountStrategy countStrategy) {
+
+        this.players = players;
+        this.shoe = shoe;
+        this.counter = new Counter(countStrategy, shoe.);
     }
     public void playRound(){
 
@@ -47,7 +60,9 @@ public class Dealer{
         Card card = shoe.next();
         if(card == Card.CUTCARD) {
             cutCardSeen = true;
-            return shoe.next();
+            card = shoe.next();
+            if (countStrategy != null)
+            return card;
         }
         return card;
     }

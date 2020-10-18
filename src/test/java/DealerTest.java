@@ -1,4 +1,6 @@
 import static org.junit.jupiter.api.Assertions.*;
+
+import bj.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -23,9 +25,9 @@ public class DealerTest {
 		Dealer dealer = new Dealer(List.of(player),shoe);
 		dealer.playRound();
 		Hand playerHand = player.getHand().get(0);
-		System.out.println("Player Hand:" + playerHand.getCards() + ":"
+		System.out.println("bj.Player bj.Hand:" + playerHand.getCards() + ":"
 				+ CardUtils.sumHand(playerHand));
-		System.out.println("Dealer upcard:" + dealer.getDealerHand().getCards().get(1)
+		System.out.println("bj.Dealer upcard:" + dealer.getDealerHand().getCards().get(1)
 				+ ": " + CardUtils.sumHand(dealer.getDealerHand()));
 		for (int i = 0; i < 5; i++)System.out.println(shoe.next());
 	}
