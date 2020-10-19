@@ -2,7 +2,7 @@ package bj;
 
 import java.util.*;
 
-class Shoe{
+public class Shoe{
 
 	private int runningCount = 0;
 	public Iterator<Card> getCardIterator() {

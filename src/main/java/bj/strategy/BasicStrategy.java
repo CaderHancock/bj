@@ -1,4 +1,4 @@
-package bj;
+package bj.strategy;
 
 public class BasicStrategy {
 

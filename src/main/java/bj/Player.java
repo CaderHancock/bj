@@ -3,7 +3,7 @@ package bj;
 import java.util.ArrayList;
 import java.util.List;
 
-class Player{
+public class Player{
 
 
 

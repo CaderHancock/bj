@@ -19,11 +19,12 @@ public class Dealer{
         this.players = players;
         this.shoe = shoe;
     }
-    public Dealer(List<Player> players, Shoe shoe, CountStrategy countStrategy) {
+    public Dealer(List<Player> players, Shoe shoe,
+                  CountStrategy countStrategy, Rules rules) {
 
         this.players = players;
         this.shoe = shoe;
-        this.counter = new Counter(countStrategy, shoe.);
+        this.counter = new Counter(countStrategy, rules.getNumOfDecks());
     }
     public void playRound(){
 
