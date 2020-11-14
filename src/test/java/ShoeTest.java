@@ -18,6 +18,11 @@ public class ShoeTest {
         Hand hand = new Hand(0);
         hand.addCard(Card.ACE);
         hand.addCard(Card.TEN);
+        Hand hand1 = new Hand(0);
+        hand1.addCard(Card.ACE);
+        hand1.addCard(Card.TEN);
+
+        //assertTrue(hand.equals(hand1));
 
         assertTrue(hand.getCards().indexOf(Card.ACE) == 0);
     }

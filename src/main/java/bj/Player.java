@@ -5,9 +5,6 @@ import java.util.List;
 
 public class Player{
 
-
-
-
 	public enum PlayerActions {STAY, HIT, DOUBLEDOWN, SPLIT}
 	private List<Hand> hand;
 	private Integer bankroll;
@@ -20,9 +17,7 @@ public class Player{
 
 	}
 	private List<PlayerActions> availableActions(){
-/*
-	   if (hand.)
-*/
+
         return null;
 	}
 	public List<Hand> getHand() {

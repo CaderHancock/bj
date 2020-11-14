@@ -7,7 +7,6 @@ import java.util.List;
 
 public class Dealer{
 
-    private CountStrategy countStrategy;
     private Counter counter;
     private List<Player> players;
     private Shoe shoe;
@@ -62,8 +61,8 @@ public class Dealer{
         if(card == Card.CUTCARD) {
             cutCardSeen = true;
             card = shoe.next();
-            if (countStrategy != null)
-            return card;
+//            if (counter != null)
+//            return card;
         }
         return card;
     }
