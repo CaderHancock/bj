@@ -22,9 +22,7 @@ public class CardUtils{
             case EIGHT -> 8;
             case NINE -> 9;
             case TEN, JACK, QUEEN, KING -> 10;
-            case CUTCARD -> {
-                yield null;
-            }
+            case CUTCARD -> null;
         };
     }
 
