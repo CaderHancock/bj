@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="DealerTest" time="0.091" tests="4" errors="0" skipped="1" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="DealerTest" time="0.085" tests="4" errors="0" skipped="1" failures="0">
   <properties>
     <property name="java.specification.version" value="14"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-14-openjdk/lib"/>
-    <property name="sun.java.command" value="/home/cader/IdeaProjects/bj/target/surefire/surefirebooter12347360985887162302.jar /home/cader/IdeaProjects/bj/target/surefire 2020-11-14T19-26-15_920-jvmRun1 surefire12802314409826652630tmp surefire_05260495059508259345tmp"/>
+    <property name="sun.java.command" value="/home/cader/IdeaProjects/bj/target/surefire/surefirebooter14778655292866892845.jar /home/cader/IdeaProjects/bj/target/surefire 2020-11-14T19-48-05_700-jvmRun1 surefire6896372128091234988tmp surefire_09359648367078584325tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/cader/IdeaProjects/bj/target/test-classes:/home/cader/IdeaProjects/bj/target/classes:/home/cader/.m2/repository/org/junit/jupiter/junit-jupiter/5.7.0/junit-jupiter-5.7.0.jar:/home/cader/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar:/home/cader/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/cader/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/cader/.m2/repository/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar:/home/cader/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.0/junit-jupiter-params-5.7.0.jar:/home/cader/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar:/home/cader/.m2/repository/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar:/home/cader/.m2/repository/org/projectlombok/lombok/1.18.16/lombok-1.18.16.jar:/home/cader/.m2/repository/org/jetbrains/annotations/20.1.0/annotations-20.1.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home/cader/IdeaProjects/bj/target/surefire/surefirebooter12347360985887162302.jar"/>
+    <property name="surefire.real.class.path" value="/home/cader/IdeaProjects/bj/target/surefire/surefirebooter14778655292866892845.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="14.0.2+12"/>
     <property name="user.name" value="cader"/>
@@ -54,6 +54,6 @@
     <skipped message="public void DealerTest.onlyPositive() is @Disabled"/>
   </testcase>
   <testcase name="lolk" classname="DealerTest" time="0"/>
-  <testcase name="dealTest" classname="DealerTest" time="0.011"/>
-  <testcase name="cutCardAlwaysThere" classname="DealerTest" time="0.076"/>
+  <testcase name="dealTest" classname="DealerTest" time="0.019"/>
+  <testcase name="cutCardAlwaysThere" classname="DealerTest" time="0.064"/>
 </testsuite>

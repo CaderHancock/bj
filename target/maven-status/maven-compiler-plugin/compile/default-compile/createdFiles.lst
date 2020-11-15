@@ -3,8 +3,8 @@ bj/Rules.class
 bj/Dealer.class
 bj/Shoe.class
 bj/ap/CountStrategy.class
-bj/strategy/BasicStrategy.class
 bj/CardUtils$1.class
+bj/strategy/BasicStrategy.class
 bj/Card.class
 bj/Player$PlayerActions.class
 bj/ap/HiLoStrategy.class
