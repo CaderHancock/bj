@@ -15,55 +15,53 @@ public class DealerTest {
     Dealer dealer;
 
     @BeforeEach
-    void setup(){
+    void setup() {
         player = new Player(1000);
         shoe = new Shoe(6);
-        dealer = new Dealer(List.of(player),shoe);
+        dealer = new Dealer(List.of(player), shoe);
     }
+
     @Test
-    public void dealTest(){
+    public void dealTest() {
         Player player = new Player(1000);
         Shoe shoe = new Shoe(6);
-        Dealer dealer = new Dealer(List.of(player),shoe);
+        Dealer dealer = new Dealer(List.of(player), shoe);
         dealer.playRound();
         Hand playerHand = player.getHand().get(0);
-        System.out.println("bj.Player bj.Hand:" + playerHand.getCards() + ":"
-                + CardUtils.sumHand(playerHand));
-        System.out.println("bj.Dealer upcard:" +
-                dealer.getDealerHand().getCards().get(1)
-                + ": " + CardUtils.sumHand(dealer.getDealerHand()));
-        for (int i = 0; i < 5; i++)System.out.println(shoe.next());
+        System.out.println("bj.Player bj.Hand:" + playerHand.getCards() + ":" + CardUtils.sumHand(playerHand));
+        System.out.println("bj.Dealer upcard:" + dealer.getDealerHand().getCards().get(1) + ": "
+                + CardUtils.sumHand(dealer.getDealerHand()));
+        for (int i = 0; i < 5; i++)
+            System.out.println(shoe.next());
     }
+
     @Test
     @Disabled
-    public void onlyPositive(){
+    public void onlyPositive() {
         for (int i = 0; i < 1000; i++) {
             dealer.playRound();
             Hand playerHand = player.getHand().get(0);
             Hand dealerHand = dealer.getDealerHand();
-            if (CardUtils.sumHand(playerHand) == 0 ||
-                    CardUtils.sumHand(dealerHand) == 0){
-                System.out.println("FUCK" +
-                        playerHand.getCards() + "sum:"+ CardUtils.sumHand(playerHand) +
-                        dealerHand.getCards() +"sum:" + CardUtils.sumHand(dealerHand));
+            if (CardUtils.sumHand(playerHand) == 0 || CardUtils.sumHand(dealerHand) == 0) {
+                System.out.println("FUCK" + playerHand.getCards() + "sum:" + CardUtils.sumHand(playerHand)
+                        + dealerHand.getCards() + "sum:" + CardUtils.sumHand(dealerHand));
                 fail();
-                    }
+            }
         }
     }
+
     @Test
-    public void cutCardAlwaysThere(){
+    public void cutCardAlwaysThere() {
 
         for (int i = 0; i < 1000; i++) {
-            assertTrue(Stream.generate(()->null)
-                    .takeWhile(x -> shoe.getCardIterator().hasNext())
-                    .map(n -> shoe.getCardIterator().next())
-                    .anyMatch(x -> x.equals(Card.CUTCARD)));
+            assertTrue(Stream.generate(() -> null).takeWhile(x -> shoe.getCardIterator().hasNext())
+                    .map(n -> shoe.getCardIterator().next()).anyMatch(x -> x.equals(Card.CUTCARD)));
             shoe = new Shoe(6);
         }
     }
-    @Test
-    public void lolk(){
-        //fail();
-    }
 
+    @Test
+    public void lolk() {
+        // fail();
+    }
 }
