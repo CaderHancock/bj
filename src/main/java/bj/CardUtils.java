@@ -3,6 +3,7 @@ package bj;
 public class CardUtils{
 
     public static int sumHand(Hand hand){
+
         return hand.getCards().stream()
             .mapToInt(CardUtils::gameValue)
             .sum();

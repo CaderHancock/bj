@@ -5,10 +5,10 @@ import java.util.List;
 public class Table{
 
 	private final int shoeSize = 6;
-	private Shoe shoe;
+	private final Shoe shoe;
 	List<Player> players;
 	private boolean cutCardSeen;
-	private Dealer dealer;
+	private final Dealer dealer;
 
 	public Table(List<Player> players){
 		this.players =	players;

@@ -7,7 +7,7 @@ public class Player{
 
 	public enum PlayerActions {STAY, HIT, DOUBLEDOWN, SPLIT}
 	private List<Hand> hand;
-	private Integer bankroll;
+	private final Integer bankroll;
 	public final Integer bet = 1;
 
 	public Player(Integer bankroll){

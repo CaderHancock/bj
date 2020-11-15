@@ -8,8 +8,8 @@ import java.util.List;
 public class Dealer{
 
     private Counter counter;
-    private List<Player> players;
-    private Shoe shoe;
+    private final List<Player> players;
+    private final Shoe shoe;
     private boolean cutCardSeen;
     private Hand dealerHand;
 
