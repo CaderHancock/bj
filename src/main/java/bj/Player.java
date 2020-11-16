@@ -14,7 +14,6 @@ public class Player{
 
 		hand = new ArrayList<>();
 		this.bankroll = bankroll;
-
 	}
 	private List<PlayerActions> availableActions(){
 
