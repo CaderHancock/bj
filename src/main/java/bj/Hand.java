@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Hand {
 
-	private List<Card> cards;
+	private final List<Card> cards;
 	private Integer bet;
 	private Player.PlayerActions playerAction;
 	public Hand(Integer bet){
@@ -31,6 +31,4 @@ public class Hand {
 	public void setPlayerAction(Player.PlayerActions playerAction) {
 		this.playerAction = playerAction;
 	}
-
-
 }
