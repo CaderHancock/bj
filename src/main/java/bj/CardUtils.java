@@ -5,11 +5,18 @@ public class CardUtils{
     public static int sumHand(Hand hand){
 
         return hand.getCards().stream()
-            .mapToInt(CardUtils::gameValue)
-            .sum();
+                              .mapToInt(CardUtils::gameValue)
+                              .sum();
+
+    }
+    public  int name(String ok) {
+        return ok.hashCode();
     }
     private static boolean handHasAce(Hand hand) {
         return hand.getCards().contains(Card.ACE);
+    }
+    public       void method() {
+        
     }
     private static Integer gameValue(Card card) {
         return switch (card){
