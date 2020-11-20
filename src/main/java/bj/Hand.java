@@ -2,6 +2,7 @@ package bj;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class Hand {
 
@@ -30,5 +31,11 @@ public class Hand {
 	}
 	public void setPlayerAction(Player.PlayerActions playerAction) {
 		this.playerAction = playerAction;
-	}
+	}       
+        public boolean equals(Hand hand){
+        
+            return hand.getCards().containsAll(this.cards) &&
+                hand.getCards().size() == this.cards.size();
+
+        }
 }

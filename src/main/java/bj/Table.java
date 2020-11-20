@@ -13,6 +13,7 @@ public class Table{
 		this.players =	players;
 		Shoe shoe = new Shoe(shoeSize);
 		dealer = new Dealer(this.players, shoe);
+    players.stream().
 	}
         public void play(){
             while (!cutCardSeen) {

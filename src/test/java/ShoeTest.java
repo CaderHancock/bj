@@ -11,7 +11,7 @@ public class ShoeTest {
     public void test1DeckShuffle(){
 
         Shoe shoe = new Shoe(1);
-        //shoe.getCardIterator().forEachRemaining(System.out::println);
+        shoe.getCardIterator().forEachRemaining(System.out::println);
     }
     @Test
     public void testCardEquality(){
@@ -22,9 +22,11 @@ public class ShoeTest {
         hand1.addCard(Card.ACE);
         hand1.addCard(Card.TEN);
 
-        //assertTrue(hand.equals(hand1));
+        assertTrue(hand.equals(hand1));
 
         assertEquals(hand.getCards().indexOf(Card.ACE), 0);
+        hand.addCard(Card.SIX);
+        assertFalse(hand.equals(hand1));
     }
     @Test
     public void whatever(){
