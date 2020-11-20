@@ -69,8 +69,4 @@ public class DealerTest {
         }
     }
 
-    @Test
-    public void lolk() {
-        // fail();
-    }
 }

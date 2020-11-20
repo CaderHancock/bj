@@ -1,6 +1,8 @@
 import bj.Card;
 import bj.Hand;
 import bj.Shoe;
+import bj.Table;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,10 +29,6 @@ public class ShoeTest {
         assertEquals(hand.getCards().indexOf(Card.ACE), 0);
         hand.addCard(Card.SIX);
         assertFalse(hand.equals(hand1));
-    }
-    @Test
-    public void whatever(){
-        Shoe shoe = new Shoe(6);
     }
 }
 

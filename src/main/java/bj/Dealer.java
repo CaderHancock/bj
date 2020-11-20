@@ -4,6 +4,7 @@ import bj.ap.CountStrategy;
 import bj.ap.Counter;
 
 import java.util.List;
+import java.util.function.Function;
 
 public class Dealer{
 
@@ -29,9 +30,18 @@ public class Dealer{
 
         if(!cutCardSeen){
             dealHands();
+            players.stream().map(x -> 
+                this.setAvailableActions(x)).toArray();
         }
     }
+    private Player setAvailableActions(Player player){
 
+        return player;
+    }
+/*
+ * This is shitty and a side effect/code smell
+ * But card dealing happens in a certain order so fuck it.
+ */
     private void dealHands() {
 
         for (int i = 0; i < players.size() ; i++) {
