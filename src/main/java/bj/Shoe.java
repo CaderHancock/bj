@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.BooleanSupplier;
 
 public class Shoe{
 
@@ -58,7 +59,6 @@ public class Shoe{
 
 		int index = (int) ((Math.random() * (higherBound - lowerBound)) + lowerBound);
 		deckInit.add(index, Card.CUTCARD);
-
 	}
 	public Card next(){
 		if(cards.next().equals(Card.CUTCARD)){
@@ -66,5 +66,4 @@ public class Shoe{
 
 		}else return cards.next();
 	}
-
 }

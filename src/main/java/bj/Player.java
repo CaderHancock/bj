@@ -17,9 +17,9 @@ public class Player{
 		hand = new ArrayList<>();
 		this.bankroll = bankroll;
 	}
-	private List<PlayerActions> getAvailableActions(){
+	private Set<PlayerActions> getAvailableActions(){
 
-        return null;
+        return availableActions;
 	}
 	public List<Hand> getHand() {
 		return hand;

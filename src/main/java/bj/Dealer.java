@@ -1,14 +1,12 @@
 package bj;
 
-import bj.ap.CountStrategy;
-import bj.ap.Counter;
-
 import java.util.List;
-import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import bj.ap.CountStrategy;
 
 public class Dealer{
 
-    private Counter counter;
     private final List<Player> players;
     private final Shoe shoe;
     private boolean cutCardSeen;
@@ -24,14 +22,15 @@ public class Dealer{
 
         this.players = players;
         this.shoe = shoe;
-        this.counter = new Counter(countStrategy, rules.getNumOfDecks());
     }
     public void playRound(){
 
         if(!cutCardSeen){
+
             dealHands();
             players.stream().map(x -> 
                 this.setAvailableActions(x)).toArray();
+            players.stream().map(x -> x.bet).collect(Collectors.toUnmodifiableSet());
         }
     }
     private Player setAvailableActions(Player player){
