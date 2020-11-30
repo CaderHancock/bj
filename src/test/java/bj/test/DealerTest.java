@@ -3,7 +3,6 @@ package bj.test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -37,10 +36,8 @@ public class DealerTest {
         Dealer dealer = new Dealer(List.of(player), shoe);
         dealer.playRound();
         Hand playerHand = player.getHand().get(0);
-        System.out.println("bj.Player bj.Hand:" + playerHand.getCards() + ":"
-                + CardUtils.sumHand(playerHand));
-        System.out.println("bj.Dealer upcard:" + 
-                dealer.getDealerHand().getCards().get(1) + ": "
+        System.out.println("bj.Player bj.Hand:" + playerHand.getCards() + ":" + CardUtils.sumHand(playerHand));
+        System.out.println("bj.Dealer upcard:" + dealer.getDealerHand().getCards().get(1) + ": "
                 + CardUtils.sumHand(dealer.getDealerHand()));
         for (int i = 0; i < 5; i++)
             System.out.println(shoe.next());
@@ -53,14 +50,10 @@ public class DealerTest {
             dealer.playRound();
             Hand playerHand = player.getHand().get(0);
             Hand dealerHand = dealer.getDealerHand();
-            if (CardUtils.sumHand(playerHand) == 0
-                ||
-                CardUtils.sumHand(dealerHand) == 0) {
-                
-                System.out.println("FUCK" + playerHand.getCards() + "sum:" + 
-                        CardUtils.sumHand(playerHand)+ 
-                        dealerHand.getCards() + "sum:" + 
-                        CardUtils.sumHand(dealerHand));
+            if (CardUtils.sumHand(playerHand) == 0 || CardUtils.sumHand(dealerHand) == 0) {
+
+                System.out.println("FUCK" + playerHand.getCards() + "sum:" + CardUtils.sumHand(playerHand)
+                        + dealerHand.getCards() + "sum:" + CardUtils.sumHand(dealerHand));
                 fail();
             }
         }
@@ -70,10 +63,8 @@ public class DealerTest {
     public void cutCardAlwaysThere() {
 
         for (int i = 0; i < 1000; i++) {
-            assertTrue(Stream.generate(() -> null).takeWhile(x -> 
-                        shoe.getCardIterator().hasNext())
-                    .map(n -> shoe.getCardIterator().next()).anyMatch(x -> 
-                        x.equals(Card.CUTCARD)));
+            assertTrue(Stream.generate(() -> null).takeWhile(x -> shoe.getCardIterator().hasNext())
+                    .map(n -> shoe.getCardIterator().next()).anyMatch(x -> x.equals(Card.CUTCARD)));
             shoe = new Shoe(6);
         }
     }

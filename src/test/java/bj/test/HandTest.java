@@ -32,7 +32,7 @@ public class HandTest {
   }
 
   @Test
-  public void givenTwoHandsOfEqualValueWithDifferentCards_whenCompareToCalled_thenReturnZero() {
+  public void givenTwoHandsOfEqualValueWithDifferentCardsNOACE_whenCompareToCalled_thenReturnZero() {
     Hand hand1 = new Hand(0);
     Hand hand2 = new Hand(0);
     hand1.addCard(Card.NINE);
