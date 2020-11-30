@@ -4,10 +4,20 @@ public class CardUtils {
 
     public static int sumHand(Hand hand) {
 
-        if (!hand.getCards().contains(Card.ACE))
-            return hand.getCards().stream().mapToInt(CardUtils::gameValue).sum();
+        int rawValue = hand.getCards().stream().mapToInt(CardUtils::gameValue).sum();
 
-        return 0;
+        if (!handHasAce(hand))
+            return rawValue;
+        else {
+            long numAces = hand.getCards().stream().filter(x -> x.equals(Card.ACE)).count();
+            for (int i = 0; i < numAces; i++) {
+                if (rawValue <= 21) {
+                    return rawValue;
+                }
+                rawValue -= 10;
+            }
+        }
+        return rawValue;
     }
 
     private static boolean handHasAce(Hand hand) {

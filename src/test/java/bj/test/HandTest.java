@@ -3,6 +3,7 @@ package bj.test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import bj.Card;
+import bj.CardUtils;
 import bj.Hand;
 import org.junit.jupiter.api.Test;
 
