@@ -5,7 +5,6 @@ import static bj.CardUtils.sumHand;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
-import java.util.Set;
 
 public class Hand {
 
@@ -53,6 +52,9 @@ public class Hand {
 		final int otherHandsValue = sumHand(hand);
 		if (thisHandsValue == otherHandsValue)
 			return 0;
-		return 1;
+		if (thisHandsValue > otherHandsValue)
+			return 1;
+		else
+			return -1;
 	}
 }

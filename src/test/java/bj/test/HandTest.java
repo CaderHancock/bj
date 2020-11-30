@@ -41,4 +41,17 @@ public class HandTest {
     hand2.addCard(Card.FIVE);
     assertTrue(0 == hand1.compareTo(hand2));
   }
+
+  @Test
+  public void givenTwoHandsOfDifferentValueWithDifferentCardsNOACE_whenCompareToCalled_thenReturnZero() {
+    Hand hand1 = new Hand(0);
+    Hand hand2 = new Hand(0);
+    hand1.addCard(Card.TEN);
+    hand1.addCard(Card.SIX);
+    hand2.addCard(Card.TEN);
+    hand2.addCard(Card.FIVE);
+    assertTrue(1 == hand1.compareTo(hand2)); // Hand1 Greater returns 1
+    hand2.addCard(Card.FIVE);
+    assertTrue(-1 == hand1.compareTo(hand2)); // Hand2 greater returns -1
+  }
 }
