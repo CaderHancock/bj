@@ -54,4 +54,12 @@ public class HandTest {
     hand2.addCard(Card.FIVE);
     assertTrue(-1 == hand1.compareTo(hand2)); // Hand2 greater returns -1
   }
+
+  @Test
+  public void givenOneHandWithTwoAces_whenValueCalculated_thenReturn12() {
+    Hand hand = new Hand(0);
+    hand.addCard(Card.ACE);
+    hand.addCard(Card.ACE);
+    assertTrue(12 == CardUtils.sumHand(hand));
+  }
 }
