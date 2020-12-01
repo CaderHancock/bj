@@ -1,14 +1,24 @@
 package bj;
 
-import lombok.Data;
-
-@Data
 public class Rules {
-    private int numOfDecks;
+    public static int DEFAULT_SHOE_SIZE = 6;
+    private int shoeSize;
 
-	public int getNumOfDecks() {
-		return 0;
-	}
+    public Rules() {
 
+        this.shoeSize = DEFAULT_SHOE_SIZE;
+    }
+
+    public int getShoeSize() {
+        return shoeSize;
+    }
+
+    public void setShoeSize(int numOfDecks) {
+        this.shoeSize = numOfDecks;
+    }
+
+    public Rules(int shoeSize) {
+        this.shoeSize = shoeSize;
+    }
 
 }

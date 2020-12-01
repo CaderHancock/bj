@@ -1,7 +1,7 @@
 package bj;
 
 import java.util.List;
-import bj.ap.CountStrategy;
+import java.util.stream.Collectors;
 
 public class Dealer {
 
@@ -9,32 +9,53 @@ public class Dealer {
     private Shoe shoe;
     private boolean cutCardSeen;
     private Hand dealerHand;
+    private Rules rules;
 
-    public Dealer(List<Player> players, Shoe shoe) {
+    public Dealer(List<Player> players) {
 
         this.players = players;
-        this.shoe = shoe;
+        this.rules = new Rules();
+        this.shoe = new Shoe(rules.getShoeSize());
     }
 
-    public Dealer(List<Player> players, Shoe shoe, CountStrategy countStrategy, Rules rules) {
+    public Dealer(List<Player> players, Rules rules) {
 
         this.players = players;
-        this.shoe = shoe;
+        this.rules = rules;
+        this.shoe = new Shoe(rules.getShoeSize());
     }
 
     public void playRound() {
         if (!cutCardSeen) {
-            dealHands();
+            try {
+                dealHands();
+            } catch (Throwable e) {
+                cutCardSeen = true;
+            } finally {
+                initiatePlayerAction();
+            }
+        } else {
+            this.shoe = new Shoe(rules.getShoeSize());
+            cutCardSeen = false;
+            System.out.println("New shoe Remaining cards:");
+
+            throw new RuntimeException("New Shoe. ");
+            // playRound();
         }
+    }
+
+    private void initiatePlayerAction() {
     }
 
     private void dealHands() {
 
-        players.forEach(player -> player.setHand(List.of(new Hand(player.bet))));
+        List<Player> bettingPlayers = this.players.stream().filter(player -> player.bet > 0)
+                .collect(Collectors.toList());
+        bettingPlayers.forEach(player -> player.setHand(List.of(new Hand(player.bet))));
         dealerHand = new Hand(0);
-        players.forEach(player -> player.getHand().forEach(hand -> hand.addCard(dealCard())));
+        bettingPlayers.forEach(player -> player.getHand().forEach(hand -> hand.addCard(dealCard())));
         dealerHand.addCard(dealCard());
-        players.forEach(player -> player.getHand().forEach(hand -> hand.addCard(dealCard())));
+        bettingPlayers.forEach(player -> player.getHand().forEach(hand -> hand.addCard(dealCard())));
         dealerHand.addCard(dealCard());
     }
 

@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Hand {
 
 	private final List<Card> cards;
@@ -23,7 +25,7 @@ public class Hand {
 		return this.cards;
 	}
 
-	public void addCard(final Card card) {
+	public void addCard(@NotNull final Card card) {
 		cards.add(card);
 		this.refreshHandActions();
 	}
