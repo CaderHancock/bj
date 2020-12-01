@@ -1,14 +1,12 @@
 package bj;
 
 import java.util.List;
-import java.util.stream.Collectors;
-
 import bj.ap.CountStrategy;
 
 public class Dealer {
 
     private final List<Player> players;
-    private final Shoe shoe;
+    private Shoe shoe;
     private boolean cutCardSeen;
     private Hand dealerHand;
 
@@ -27,24 +25,10 @@ public class Dealer {
     public void playRound() {
         if (!cutCardSeen) {
             dealHands();
-            players.stream().map(x -> this.setAvailableActions(x)).toArray();
-            players.stream().map(x -> x.bet).collect(Collectors.toUnmodifiableSet());
         }
     }
 
-    private Player setAvailableActions(Player player) {
-        return player;
-    }
-
-    /*
-     * This is shitty and a side effect/code smell But card dealing happens in a
-     * certain order so fuck it.
-     */
     private void dealHands() {
-
-        for (int i = 0; i < players.size(); i++) {
-
-        }
 
         players.forEach(player -> player.setHand(List.of(new Hand(player.bet))));
         dealerHand = new Hand(0);
@@ -76,6 +60,10 @@ public class Dealer {
 
     public void setDealerHand(Hand dealerHand) {
         this.dealerHand = dealerHand;
+    }
+
+    public void setShoe(Shoe shoe) {
+        this.shoe = shoe;
     }
 
 }
