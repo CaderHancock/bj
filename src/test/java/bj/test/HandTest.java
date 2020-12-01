@@ -1,5 +1,6 @@
 package bj.test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -53,9 +54,9 @@ public class HandTest {
     hand1.addCard(Card.SIX);
     hand2.addCard(Card.TEN);
     hand2.addCard(Card.FIVE);
-    assertTrue(1 == hand1.compareTo(hand2)); // Hand1 Greater returns 1
+    assertEquals(1, hand1.compareTo(hand2)); // Hand1 Greater returns 1
     hand2.addCard(Card.FIVE);
-    assertTrue(-1 == hand1.compareTo(hand2)); // Hand2 greater returns -1
+    assertEquals(-1, hand1.compareTo(hand2)); // Hand2 greater returns -1
   }
 
   @Test
