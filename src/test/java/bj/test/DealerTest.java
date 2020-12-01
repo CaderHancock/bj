@@ -1,15 +1,11 @@
 package bj.test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.List;
-import java.util.stream.Stream;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import bj.Card;
 import bj.CardUtils;
 import bj.Dealer;
 import bj.Hand;
@@ -58,16 +54,6 @@ public class DealerTest {
                         + dealerHand.getCards() + "sum:" + CardUtils.sumHand(dealerHand));
                 fail();
             }
-        }
-    }
-
-    @Test
-    public void cutCardAlwaysThere() {
-
-        for (int i = 0; i < 1000; i++) {
-            assertTrue(Stream.generate(() -> null).takeWhile(x -> shoe.getCardIterator().hasNext())
-                    .map(n -> shoe.getCardIterator().next()).anyMatch(x -> x.equals(Card.CUTCARD)));
-            shoe = new Shoe(6);
         }
     }
 
