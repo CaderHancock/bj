@@ -11,7 +11,6 @@ public class Table {
 
     public Table(List<Player> players) {
         this.players = players;
-        Shoe shoe = new Shoe(shoeSize);
         dealer = new Dealer(this.players);
     }
 

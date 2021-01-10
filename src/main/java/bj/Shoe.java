@@ -7,8 +7,6 @@ import java.util.List;
 
 public class Shoe {
 
-	private int runningCount = 0;
-
 	public Iterator<Card> getCardIterator() {
 		return cards;
 	}
